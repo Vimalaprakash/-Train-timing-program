@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+        <style>
+            body{
+                background-color: rgb(21, 226, 241);
+            }
+            h1{
+                text-align: center;
+                font-size: 50px;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            h3{
+                font-size: 30px;
+            }
+            .button{
+                background-color: rgb(232, 247, 97);
+                text-align: center;
+                color: rgba(248, 18, 18, 0.752);
+                border-color:  rgb(28, 208, 70) ;
+                height: 30px; 
+                width: 100px; 
+                font-size: medium;
+                
+                
+            }
+            .rectangle{
+                background-color: rgb(222, 47, 157);
+                text-align: center;
+                color: black;
+                height: 175px;
+                width: 350px;
+                font-size: 35px;
+
+
+            }
+            .h2{
+                text-align: center;
+                font-size: larger;
+                color: black;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            .h3{
+                font-size: medium;
+                color: black;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            table,th,td{
+                border: 2px solid black;
+                border-radius: 2px;
+                color:black;
+                font-size: 15px solid black;
+                text-align: center;
+            }
+            table{
+                width: 75%;
+            }
+            img{
+                width: 500px;
+            }
+            .h4{
+                text-align: right;
+                font-size: 20px;
+
+            }
+            .h5{
+                font-size: 25px;
+                text-align: center;
+            }
+            .h6{
+                font-size: 25px;
+                text-align: center;
+            }
+            a{
+                text-align: center;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+
+ 
+    <script>
+        var chcb= {"chcbtt":[
+            {"trainno" : "40502", "time" : "4:00AM to 5.50AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40504", "time" : "4.30AM to 6.20AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40506", "time" : "4:45AM to 6.46AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40508", "time" : "5.20AM to 7:10AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40510", "time" : "5:50AM to 7:45AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40902", "time" : "6:15AM to 8:05AM", "from" : "Arakkonam", "to" : "Chennai Beach", "type" :"EMU"},
+            {"trainno" : "40512", "time" : "6:40AM to 8:30AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40514", "time" : "6:55AM to 8:46AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40702", "time" : "7:05AM to 8:53AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40516", "time" : "7:15AM to 9:05AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40518", "time" : "7:45Am to 9:20AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "Semi Fast EMU"},
+            {"trainno" : "40520", "time" : "8:05AM to 9:50AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "Fast EMU"},
+            {"trainno" : "40802", "time" : "8:05AM to 9:30AM", "from" : "Tirumalpur", "to" : "Chennai Beach", "type" : "Fast EMU"},
+            {"trainno" : "40522", "time" : "8:25AM to 10:10AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "Fast EMU"},
+            {"trainno" : "40524", "time" : "8:40AM to 10:25AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40526", "time" : "8:50AM to 10:27AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "Fast EMU"},
+            {"trainno" : "40904", "time" : "9:50AM to 10:35AM", "from" : "Arrakkonam", "to" : "Chennai Beach", "type" : "Fast EMU"},
+            {"trainno" : "40528", "time" : "9:20AM to 11:10AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40501", "time" : "10:00AM to 11:45AM", "from" : "Chengalpattu", "to" : "Gummidipoondi", "type" : "EMU"},
+            {"trainno" : "40704", "time" : "10:30AM to 12:15PM", "from" : "Kanchipuram", "to" : "Chennai Beach", "type" : "Semi Fast EMU"},
+            {"trainno" : "40530", "time" : "11:00AM to 12:45PM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40532", "time" : "11:30AM to 1:15PM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40534", "time" : "12:00PM to 1:45PM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40804", "time" : "12:20PM to 2:08PM", "from" : "Tirumalpur", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40536", "time" : "1.00PM to 2:45PM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40538", "time" : "1:45PM to 3:35PM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},       
+            {"trainno" : "40540", "time" : "2:20PM to 4.00PM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40542", "time" : "3:05PM to 4:45PM", "from" : "Tirumalpur", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "06722", "time" : "3:46PM to 5:45PM", "from" : "Melmaruvathur", "to" : "Chennai Beach", "type" : "MEMU Express Special"},
+        ]};
+        var tacb= {"tacbtt":[
+            {"trainno" : "40002", "time" : "3.55AM to 4.50AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40004", "time" : "4.15AM to 5:10AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40006", "time" : "4:35AM to 5.30AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40502", "time" : "4.55AM to 5.50AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40008", "time" : "5:12Am to 6.07AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40504", "time" : "5:25AM to 6.20AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40010", "time" : "5:38AM to 6.33AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40506", "time" : "5:51AM to 6.46AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40012", "time" : "6:03AM to 6.58AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40508", "time" : "6:15AM to 7:10AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40014", "time" : "6:27AM to 7:22AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "400016", "time" : "6:39AM to 7:34AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40510", "time" : "6:50AM to 7:45AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40018", "time" : "7:00AM to 7:55AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40902", "time" : "7:10AM to 8:05AM", "from" : "Arrakonam", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40020", "time" : "7:17AM to 8:12AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40022", "time" : "7:27AM to 8:22AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40512", "time" : "7:35AM to 8:30AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40024", "time" : "7:43AM to 8:38AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40514", "time" : "7:51AM to 8:46AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40026", "time" : "8:05AM to 9:00AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40516", "time" : "8:12AM to 9:07AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40028", "time" : "8:19AM to 9:14AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40030", "time" : "8:26AM to 9:21AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "Ladies Special EMU"},
+            {"trainno" : "40518", "time" : "8:30AM to 9:20AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "Semi Fast EMU"},
+            {"trainno" : "40032", "time" : "8:33AM to 9:28AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "Ladies Special EMU"},
+            {"trainno" : "40034", "time" : "8:39AM to 9:34AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40802", "time" : "8:40AM to 9:30AM", "from" : "Tirumalpur", "to" : "Chennai Beach", "type" : "Fast EMU"},
+            {"trainno" : "40036", "time" : "8:46AM to 9:41AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40038", "time" : "8:53AM to 9:48AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40520", "time" : "9:00AM to 9:50AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "Fast EMU"},
+            {"trainno" : "40040", "time" : "9.00AM to 9:55AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40042", "time" : "9:08AM to 10:03AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40522", "time" : "9:15AM to 10:10AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "Fast EMU"},
+            {"trainno" : "40044", "time" : "9:22AM to 10:17AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40524", "time" : "9:30AM to 10:25AM", "from" : "Chengalpattu", "to" : "Chennai Beach", "type" : "EMU"},
+            {"trainno" : "40526", "time" : "9:35AM to 10:32AM", "from" : "Tambaram", "to" : "Chennai Beach", "type" : "Fast EMU"},
+        ]};
+     
+    </script>
+    <body>
+        <h1>Chennai Local Train Timings</h1>
+        <br><br>
+        <p class="h4">Date/Time:<span id ="svp"></span></p><br><br>
+        <p class="h5">Hai Now you can book the local train ticket in online also, scroll down and check it! </p>
+        <center>
+          
+                <form class="rectangle" >
+                <label for="from" style="font-size:larger;" >From</label>
+                <select id="from" name="stationlist" form="stationform" style="height: 35px; width: 200px; font-size: medium;">
+                <option value="Chengalpattu Junction">Chengalpattu Junction</option>
+                <option value="Paranur">Paranur</option>
+                <option value="Singaperumal Koil">Singaperumal Koil</option>
+                <option value="Maraimalai Nagar">Maraimalai Nagar</option>
+                <option value="Kattangulattur">Kattangulattur</option>
+                <option value="Potheri">Potheri</option>
+                <option value="Guduvancheri">Guduvancheri</option>
+                <option value="Urapakkam">Urapakkam</option>
+                <option value="Vandalur">Vandalur</option>
+                <option value="Perungalatur">Perungalatur</option>
+                <option value="Tambaram">Tambaram</option>
+                <option value="Tambaram Sanatorium">Tambaram Sanatorium</option>
+                <option value="Chrompet">Chrompet</option>
+                <option value="Pallavaram">Pallavaram</option>
+                <option value="Trisulam">Trisulam</option>
+                <option value="Minambakkam">Minambakkam</option>
+                <option value="Palavanthangal">Palavanthangal</option>
+                <option value="St Thomas Mount">St Thomas Mount</option>
+                <option value="Guindy">Guindy</option>
+                <option value="Saidapet">Saidapet</option>
+                <option value="Mambalam">Mambalam</option>
+                <option value="Kodambakkam">Kodambakkam</option>
+                <option value="Numgambakkam">Numgambakkam</option>
+                <option value="Chetpet">Chetpet</option>
+                <option value="Chennai Egmore">Chennai Egmore</option>
+                <option value="Chennai Park">Chennai Park</option>
+                <option value="Chennai Fort">Chennai Fort</option>
+                <option value="Chennai Beach">Chennai Beach</option>
+                <select><br>
+                <br>
+                <label for="to" style="font-size:larger;" >To</label>
+                <select id="to" name="stationlist" from="stationform" style="height: 35px; width: 200px;font-size: medium;">
+                <option value="Chengalpattu Junction">Chengalpattu Junction</option>
+                <option value="Paranur">Paranur</option>
+                <option value="Singaperumal Koil">Singaperumal Koil</option>
+                <option value="Maraimalai Nagar">Maraimalai Nagar</option>
+                <option value="Kattangulattur">Kattangulattur</option>
+                <option value="Potheri">Potheri</option>
+                <option value="Guduvancheri">Guduvancheri</option>
+                <option value="Urapakkam">Urapakkam</option>
+                <option value="Vandalur">Vandalur</option>
+                <option value="Perungalatur">Perungalatur</option>
+                <option value="Tambaram">Tambaram</option>
+                <option value="Tambaram Sanatorium">Tambaram Sanatorium</option>
+                <option value="Chrompet">Chrompet</option>
+                <option value="Pallavaram">Pallavaram</option>
+                <option value="Trisulam">Trisulam</option>
+                <option value="Minambakkam">Minambakkam</option>
+                <option value="Palavanthangal">Palavanthangal</option>
+                <option value="St Thomas Mount">St Thomas Mount</option>
+                <option value="Guindy">Guindy</option>
+                <option value="Saidapet">Saidapet</option>
+                <option value="Mambalam">Mambalam</option>
+                <option value="Kodambakkam">Kodambakkam</option>
+                <option value="Numgambakkam">Numgambakkam</option>
+                <option value="Chetpet">Chetpet</option>
+                <option value="Chennai Egmore">Chennai Egmore</option>
+                <option value="Chennai Park">Chennai Park</option>
+                <option value="Chennai Fort">Chennai Fort</option>
+                <option value="Chennai Beach">Chennai Beach</option>
+                </select><br>
+                <br>
+                </form>
+                <br>
+
+                <button class="button"onclick="cltt(document.getElementById('from').value, document.getElementById('to').value)">Search</button>
+                <p id="demo"></p>
+                <p id="vp"></p>
+            
+            <table id="id01">
+                <tr class="h2">
+                    <td>Train No</td>
+                    <td>Time</td>
+                    <td>From</td>
+                    <td>To</td>
+                    <td>Type</td>
+                </tr>
+                <tr w3-repeat="chcbtt" class="h3">
+                    <td>{{trainno}}</td>
+                    <td>{{time}}</td>
+                    <td>{{from}}</td>
+                    <td>{{to}}</td>
+                    <td>{{type}}</td>
+                </tr>
+                <tr w3-repeat="tacbtt" class="h3">
+                    <td>{{trainno}}</td>
+                    <td>{{time}}</td>
+                    <td>{{from}}</td>
+                    <td>{{to}}</td>
+                    <td>{{type}}</td>
+                </tr>
+    
+            </table>
+            <py-script>
+                "Hello world!"
+            </py-script>
+            <h2>Chennai Local Train Map is attached here check it!</h2>
+            <img src="https://erail.in/images/net-map/chennai-local-trains.jpg"> 
+            <h3>UTS app</h3>
+            <p class="h6">UTS-Unreserved Train Tickets. It is an Indian Railways official android mobile ticketing app to book unreserved train tickets.
+                This app is working for both Android and Iphone also.
+                For Android users go to the play store and type uts and install it.
+                For Iphone users scan the QR-code and install it.
+                scan the QR-code and install to your device!
+            </p>
+            <img src="https://www.irctchelp.in/wp-content/uploads/2018/03/uts-ios-app-1200x1880.jpg">
+            <br>
+            <a href="https://www.railmitra.com/blog/things-you-should-know-about-uts-ticket-booking#:~:text=UTS%2D%20Local%20Train%20Ticket%20Booking,passes%2C%20and%20purchase%20platform%20tickets.">
+            Click this and check more details about the UTS app</a>
+        </center>
+        
+        
+    </body>
+   
+    <center>
+        <script>
+            const d = new Date();
+            document.getElementById('svp').innerHTML = d;
+        function cltt(a,b){
+            document.getElementById('demo').innerHTML="From ="+ a  + "<br>" + "To =" + b;
+            let c="Chengalpattu Junction";
+            let d="Chennai Beach";
+            let e="Tambaram";
+            let f="paranur";
+            let g="Singaperumal Kovil";
+            let h="Maraimalai Nagar";
+            let i="Kattankulathur";
+            let j="Potheri";
+            let k="Guduvancheri";
+            let l="Urapakkam";
+            let m="vandalur";
+            let n="Pergalathur";
+            let o="Tambaram Sanitorium";
+            let p="Chrompet";
+            let q="Pallavaram";
+            let r="Trisulam";
+            let s="Minambakkam"; 
+            if ((a===c) & (b===d)){
+                w3.displayObject("id01" , chcb);      
+            }
+            else if ((a===e) & (b===d)){
+                w3.displayObject("id01", tacb);
+            }
+
+        }
+        
+        </script>
+    </center>
+</html>
